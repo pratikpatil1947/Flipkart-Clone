@@ -1,0 +1,329 @@
+:root{
+  --blue:#2874f0;
+  --muted:#6b7280;
+  --bg:#f5f7fb;
+  --card:#fff;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial; margin:0; background:var(--bg); color:#111}
+
+/* Top nav similar layout */
+.topnav{
+  display:flex; align-items:center; gap:18px;
+  padding:12px 18px; background:var(--blue); color:white;
+  position:sticky; top:0; z-index:50;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.logo-mark{display:inline-block;background:white;color:var(--blue);padding:6px 8px;border-radius:6px;font-weight:900}
+.brand-text{font-size:18px}
+.brand-text .lite{font-weight:600; margin-left:6px; color:rgba(255,255,255,0.9)}
+
+.search-wrap{flex:1; display:flex; align-items:center; gap:8px}
+.search-wrap select{padding:8px;border-radius:4px;border:0}
+.search-wrap input{flex:1;padding:10px;border-radius:4px;border:0}
+.search-btn{padding:9px 12px;border-radius:4px;border:0;background:#fff;color:var(--blue);font-weight:600;cursor:pointer}
+
+.nav-actions{display:flex;gap:8px;align-items:center}
+.btn{padding:8px 12px;border-radius:6px;border:0;cursor:pointer}
+.btn.ghost{background:transparent;color:white;border:1px solid rgba(255,255,255,0.12)}
+.btn.primary{background:var(--blue); color:white}
+.btn.cart{background:rgba(255,255,255,0.14); color:white}
+
+/* categories strip */
+.cats{display:flex; gap:12px; padding:10px 18px; background:linear-gradient(90deg,#3b7be4,#245ecb); color:white; overflow:auto}
+.cat{padding:8px 12px;border-radius:20px;background:rgba(255,255,255,0.06);white-space:nowrap}
+
+/* main hero + side */
+.main{display:flex; gap:16px; max-width:1200px; margin:18px auto; padding:0 18px}
+.hero{flex:2}
+.side{flex:0.9; display:flex;flex-direction:column; gap:12px}
+.carousel{position:relative; border-radius:8px; overflow:hidden; height:320px; background:#eee}
+.carousel img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .4s}
+.carousel img.active{opacity:1}
+.carousel-controls{position:absolute; right:10px; bottom:8px; display:flex; gap:6px}
+.carousel-controls button{background:rgba(0,0,0,0.5); color:white; border:0; padding:8px 10px;border-radius:6px;cursor:pointer}
+
+/* side cards */
+.side-card{background:var(--card); padding:12px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); text-align:center}
+.side-card img{width:100%; border-radius:6px; height:120px; object-fit:cover}
+.small{color:var(--muted); margin-top:8px}
+
+/* products */
+.products{max-width:1200px;margin:18px auto;padding:0 18px}
+.products h3{margin-bottom:12px}
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px}
+.card{background:var(--card); padding:12px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06); text-align:left}
+.card img{width:100%; height:160px; object-fit:cover; border-radius:6px}
+.card .title{font-weight:600; margin-top:8px}
+.card .price{font-weight:800;margin-top:6px}
+
+/* cart panel */
+.cart-panel{position:fixed; right:0; top:0; width:340px; height:100vh; transform:translateX(110%); transition:transform .25s ease; background:var(--card); box-shadow:-10px 0 30px rgba(0,0,0,0.12); padding:16px; z-index:60}
+.cart-panel.open{transform:translateX(0)}
+.cart-head{display:flex;justify-content:space-between;align-items:center}
+.cart-items{margin-top:12px;max-height:65vh;overflow:auto}
+.cart-row{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}
+.cart-row img{width:64px;height:64px;object-fit:cover;border-radius:6px}
+.cart-footer{position:absolute; bottom:18px; left:16px; right:16px; display:flex; justify-content:space-between; align-items:center}
+
+/* footer */
+.footer{padding:18px;text-align:center;color:var(--muted); margin-top:40px}
+
+/* responsive */
+@media(max-width:900px){
+  .main{flex-direction:column}
+  .side{order:2}
+  .hero{order:1}
+  .search-wrap input{display:block}
+}
+
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffe500;
+}
+
+
+/* ---------- LOGIN PAGE STYLING ---------- */
+
+body.login-body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #2874f0, #56a0ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background: #fff;
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  width: 350px;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #2874f0;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.login-container input:focus {
+  border: 1px solid #2874f0;
+  box-shadow: 0 0 5px rgba(40,116,240,0.4);
+}
+
+.login-container button {
+  width: 100%;
+  background: #2874f0;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.login-container button:hover {
+  background: #0d5bdc;
+}
+
+.login-container p {
+  margin-top: 15px;
+  color: #333;
+  font-size: 14px;
+}
+
+.login-container a {
+  color: #2874f0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- SIGNUP PAGE STYLING ---------- */
+
+body.login-body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #2874f0, #56a0ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background: #fff;
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  width: 350px;
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #2874f0;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.login-container input:focus {
+  border: 1px solid #2874f0;
+  box-shadow: 0 0 5px rgba(40,116,240,0.4);
+}
+
+.login-container button {
+  width: 100%;
+  background: #2874f0;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.login-container button:hover {
+  background: #0d5bdc;
+}
+
+.login-container p {
+  margin-top: 15px;
+  color: #333;
+  font-size: 14px;
+}
+
+.login-container a {
+  color: #2874f0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+/* Small fade-in animation for smooth entry */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- CART PANEL BUTTON HOVER EFFECT ---------- */
+
+/* Remove button hover effect */
+.cart-row .btn.ghost:hover {
+  background: #f0f0f0; /* हलके gray background */
+  color: #111;           /* text color dark */
+}
+
+/* Close button hover effect */
+#closeCart:hover {
+  background: rgba(40, 116, 240, 0.1); /* हलका blue background */
+  color: #2874f0;                       /* text color blue */
+}
+
+/* Smooth transition for buttons */
+.cart-row .btn.ghost,
+#closeCart {
+  transition: background 0.2s, color 0.2s;
+}
+
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-col {
+  flex: 1 1 180px;
+}
+.footer-col h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 6px;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  flex-wrap: wrap;
+}
+.payment-icons img {
+  height: 25px;
+  margin-left: 6px;
+}
+.social-icons a {
+  margin-right: 8px;
+  color: #fff;
+}
+
